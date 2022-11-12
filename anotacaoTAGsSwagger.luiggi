@@ -1,0 +1,16 @@
+POR GENTILEZA SE UTILIZAR OUTRAS TAGS ADD AQUI //ATENCAO LUIGGI
+
+
+#swagger.tags = ['Profile']      //Tipo de rota, todas que tiver o mesmo nome vai permanecer na mesma sessão
+#swagger.summary = '/profile/'   //Pode ser usado por exemplo para mostrar caminho da rota /profiles/id:?  ou /profile/ ou deixa padrão, sem nada;
+#swagger.description = 'rota que apaga o luiggi' //Descrever tipo de rota, oque ela faz e tals
+#swagger.parameters = [{name: 'Nome do campo input', type: 'double'}] // Add campo para inserir dados e testa API
+#swagger.parameters['Nome do Objeto'] = { 
+                in: 'body', 
+                description: 'Esse obj add um [...] no banco de dados', 
+                required: true, 
+                schema: { 
+                    nomeDoCampo: "dadoDoCampo", 
+                    user: "rafael" 
+                } 
+            } 

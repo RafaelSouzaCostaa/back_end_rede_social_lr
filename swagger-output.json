@@ -1,0 +1,144 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API - Rede Social LR",
+    "description": "<b>API - Rede Social LR</b> foi realizado como um trabalho final da materia de API REST"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Index"
+        ],
+        "description": "Rota de testar API - Rede Social LR",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/post/": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "",
+        "description": "",
+        "parameters": [
+          {
+            "name": "   {userProfile: Luiggi, type: String},      ",
+            "userProfile": "Luiggi",
+            "type": "String",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Post"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/profile/": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Criando um Profile",
+        "description": "",
+        "parameters": [
+          {
+            "name": "Profile",
+            "in": "body",
+            "description": "Esse obj add um profile no banco de dados",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Rafael De Souza"
+                },
+                "nickName": {
+                  "type": "string",
+                  "example": "leafar"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "leafar@leafar"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "password321"
+                },
+                "phone": {
+                  "type": "string",
+                  "example": "12 3456-78910"
+                },
+                "image": {
+                  "type": "string",
+                  "example": "http url/pnh/jpeg/"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/profile/getAlls": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "autoHeaders": true,
+  "autoQuery": true,
+  "autoBody": true
+}
