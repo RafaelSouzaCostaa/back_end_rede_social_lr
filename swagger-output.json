@@ -104,7 +104,7 @@
                 },
                 "image": {
                   "type": "string",
-                  "example": "http url/pnh/jpeg/"
+                  "example": "http url/png/jpeg/"
                 }
               }
             }
@@ -125,6 +125,7 @@
         "tags": [
           "Profile"
         ],
+        "summary": "Buscando todos os Profiles",
         "description": "",
         "parameters": [],
         "responses": {
@@ -133,6 +134,38 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/profile/getNickNameProfile/{nickName}": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Buscando profile por nickName",
+        "description": "",
+        "parameters": [
+          {
+            "name": "nickName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "nickName": "nickName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
