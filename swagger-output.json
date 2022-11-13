@@ -37,19 +37,62 @@
         "tags": [
           "Post"
         ],
-        "summary": "",
+        "summary": "Criando um Post",
         "description": "",
         "parameters": [
           {
-            "name": "   {userProfile: Luiggi, type: String},      ",
-            "userProfile": "Luiggi",
-            "type": "String",
-            "in": "query"
+            "name": "Post",
+            "in": "body",
+            "description": "Esse obj add um comment no banco de dados",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "profileObjectID": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792dde4"
+                },
+                "postMedia": {
+                  "type": "array",
+                  "example": [
+                    "https://images.pexels.com/photos/1000739/pexels-photo-1000739.jpeg",
+                    "https://images.pexels.com/photos/6964129/pexels-photo-6964129.jpeg"
+                  ],
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "postDate": {
+                  "type": "string",
+                  "example": "Sun Nov 13 2022 16:54:18 GMT-0300 (Horário Padrão de Brasília)"
+                },
+                "numberOfLikes": {
+                  "type": "number",
+                  "example": 0
+                },
+                "numberOfReposts": {
+                  "type": "number",
+                  "example": 0
+                },
+                "numberOfComments": {
+                  "type": "number",
+                  "example": 0
+                },
+                "comments": {
+                  "type": "array",
+                  "example": [],
+                  "items": {}
+                }
+              }
+            }
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -245,9 +288,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "profileObjectId": {
+                "postObjectId": {
                   "type": "string",
                   "example": "63703f1de318f3ffa792dde4"
+                },
+                "profileObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792ddad"
                 },
                 "comment": {
                   "type": "string",
@@ -255,31 +302,16 @@
                 },
                 "numberOfLikes": {
                   "type": "number",
-                  "example": 58
+                  "example": 0
                 },
                 "numberOfComments": {
                   "type": "number",
                   "example": 0
                 },
-                "comments": {
+                "subComments": {
                   "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "commentProfileObjectId": {
-                        "type": "string",
-                        "example": "63703f1de318f3ffa792dde6"
-                      },
-                      "comment": {
-                        "type": "string",
-                        "example": "Este e um comentario"
-                      },
-                      "numberOfLikes": {
-                        "type": "number",
-                        "example": 12
-                      }
-                    }
-                  }
+                  "example": [],
+                  "items": {}
                 }
               }
             }
@@ -295,40 +327,37 @@
         }
       }
     },
-    "/comment/addSubComment/{_id}": {
+    "/comment/createSubComment": {
       "post": {
         "tags": [
           "Comment"
         ],
-        "summary": "Add um SubComment pelo ID de Comment",
+        "summary": "Criando um SubComment",
         "description": "",
         "parameters": [
           {
-            "name": "_id",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "ID de um Comment"
-          },
-          {
-            "name": "Comment",
+            "name": "SubComment",
             "in": "body",
-            "description": "Esse obj add um SubComment no Comment por ID",
+            "description": "Esse obj add um SubComment no banco de dados",
             "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "profileObjectId": {
+                "commentObjectId": {
                   "type": "string",
                   "example": "63703f1de318f3ffa792dde4"
                 },
+                "profileObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa79sdse5"
+                },
                 "comment": {
                   "type": "string",
-                  "example": "Este e um SubComentario"
+                  "example": "Este e um SubComment"
                 },
                 "numberOfLikes": {
                   "type": "number",
-                  "example": 15
+                  "example": 0
                 }
               }
             }
@@ -338,8 +367,8 @@
           "200": {
             "description": "OK"
           },
-          "404": {
-            "description": "Not Found"
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
