@@ -3,6 +3,8 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 
+require("dotenv").config({ path: "./variables.env" });
+
 const swaggerFile = require("./swagger-output.json");
 const swaggerUI = require("swagger-ui-express");
 
@@ -31,10 +33,10 @@ app.use("/comment", commentsRouter);
 app.use("/doc", swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
 mongoose
-    .connect("mongodb://127.0.0.1:27017/lr")
+    .connect(process.env.URL_MONGO_DB)
     .then(() => {
-        app.listen(3000);
-        console.log("Banco conectado com sucesso! ");
+        app.listen(process.env.PORT_API);
+        console.log("Banco conectado com sucesso!");
     })
     .catch(function (err) {
         console.log("Erro ao conectar ao banco! " + err.message);
