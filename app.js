@@ -9,6 +9,7 @@ const swaggerUI = require("swagger-ui-express");
 const indexRouter = require("./lib/routes/index");
 const postRouter = require("./lib/routes/post");
 const profileRouter = require("./lib/routes/profile");
+const commentsRouter = require("./lib/routes/comment");
 
 app.use(cors());
 
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use("/", indexRouter);
 app.use("/post", postRouter);
 app.use("/profile", profileRouter);
+app.use("/comment", commentsRouter);
 
 app.use("/doc", swaggerUI.serve, swaggerUI.setup(swaggerFile));
 

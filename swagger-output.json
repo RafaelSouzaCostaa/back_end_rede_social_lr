@@ -228,6 +228,93 @@
           }
         }
       }
+    },
+    "/comment/": {
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Criando um Comment",
+        "description": "",
+        "parameters": [
+          {
+            "name": "Comment",
+            "in": "body",
+            "description": "Esse obj add um comment no banco de dados",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "profileObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792dde4"
+                },
+                "comment": {
+                  "type": "string",
+                  "example": "Este e um comentario"
+                },
+                "numberOfLikes": {
+                  "type": "number",
+                  "example": 58
+                },
+                "numberOfComments": {
+                  "type": "number",
+                  "example": 0
+                },
+                "comments": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "commentProfileObjectId": {
+                        "type": "string",
+                        "example": "63703f1de318f3ffa792dde6"
+                      },
+                      "comment": {
+                        "type": "string",
+                        "example": "Este e um comentario"
+                      },
+                      "numberOfLikes": {
+                        "type": "number",
+                        "example": 12
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/comment/{id}": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "autoHeaders": true,
