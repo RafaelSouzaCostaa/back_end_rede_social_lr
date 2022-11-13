@@ -295,7 +295,7 @@
         }
       }
     },
-    "/comment/{id}": {
+    "/comment/{_id}": {
       "get": {
         "tags": [
           "Comment"
@@ -303,7 +303,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "_id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -312,6 +312,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
