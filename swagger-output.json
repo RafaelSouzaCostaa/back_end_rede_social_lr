@@ -64,7 +64,7 @@
                 },
                 "postDate": {
                   "type": "string",
-                  "example": "Sun Nov 13 2022 18:15:06 GMT-0300 (Horário Padrão de Brasília)"
+                  "example": "Sun Nov 13 2022 19:20:29 GMT-0300 (Horário Padrão de Brasília)"
                 },
                 "numberOfLikes": {
                   "type": "number",
