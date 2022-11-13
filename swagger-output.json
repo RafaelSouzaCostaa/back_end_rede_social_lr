@@ -295,34 +295,6 @@
         }
       }
     },
-    "/comment/{_id}": {
-      "get": {
-        "tags": [
-          "Comment"
-        ],
-        "summary": "Buscando um comment por ID",
-        "description": "",
-        "parameters": [
-          {
-            "name": "_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/comment/addSubComment/{_id}": {
       "post": {
         "tags": [
@@ -372,7 +344,63 @@
         }
       }
     },
-    "/comment/deletarSubComment/{_idComment}/{_idSubComment}": {
+    "/comment/{_id}": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Buscando um comment por ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/comment/getAllSubCommentCommentById/{_id}": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Buscando todos os subComment por ID de comment",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/comment/deleteSubCommentByIDs/{_idComment}/{_idSubComment}": {
       "delete": {
         "tags": [
           "Comment"
@@ -405,7 +433,7 @@
         }
       }
     },
-    "/comment/deletarCommentByID/{_id}": {
+    "/comment/deleteCommentByID/{_id}": {
       "delete": {
         "tags": [
           "Comment"
