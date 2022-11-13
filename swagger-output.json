@@ -300,6 +300,7 @@
         "tags": [
           "Comment"
         ],
+        "summary": "Buscando um comment por ID",
         "description": "",
         "parameters": [
           {
@@ -313,8 +314,60 @@
           "200": {
             "description": "OK"
           },
+          "404": {
+            "description": "Not Found"
+          },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/comment/addSubComment/{_id}": {
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Add um SubComment pelo ID de Comment",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID de um Comment"
+          },
+          {
+            "name": "Comment",
+            "in": "body",
+            "description": "Esse obj add um SubComment no Comment por ID",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "profileObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792dde4"
+                },
+                "comment": {
+                  "type": "string",
+                  "example": "Este e um SubComentario"
+                },
+                "numberOfLikes": {
+                  "type": "number",
+                  "example": 15
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
