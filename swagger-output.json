@@ -111,11 +111,14 @@
           }
         ],
         "responses": {
+          "100": {
+            "description": "Email ou NickName já está em uso!"
+          },
           "200": {
             "description": "OK"
           },
-          "500": {
-            "description": "Internal Server Error"
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
@@ -129,11 +132,11 @@
         "description": "",
         "parameters": [],
         "responses": {
+          "101": {
+            "description": "Não tem profiles cadastrado no banco!"
+          },
           "200": {
             "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request"
           },
           "404": {
             "description": "Not Found"
@@ -141,7 +144,7 @@
         }
       }
     },
-    "/profile/getNickNameProfile/{nickName}": {
+    "/profile/getProfileByNickName/{nickName}": {
       "get": {
         "tags": [
           "Profile"
@@ -155,6 +158,34 @@
             "required": true,
             "type": "string",
             "nickName": "nickName"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/profile/getProfileByID/{_id}": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Buscando profile por ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
