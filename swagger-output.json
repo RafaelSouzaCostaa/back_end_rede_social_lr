@@ -111,14 +111,14 @@
           }
         ],
         "responses": {
-          "100": {
-            "description": "Email ou NickName já está em uso!"
-          },
           "200": {
             "description": "OK"
           },
-          "400": {
-            "description": "Bad Request"
+          "404": {
+            "description": "Email ou NickName já está em uso!"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -132,14 +132,14 @@
         "description": "",
         "parameters": [],
         "responses": {
-          "101": {
-            "description": "Não tem profiles cadastrado no banco!"
-          },
           "200": {
             "description": "OK"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Não tem profiles cadastrado no banco!"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -164,11 +164,11 @@
           "200": {
             "description": "OK"
           },
-          "400": {
-            "description": "Bad Request"
-          },
           "404": {
-            "description": "Not Found"
+            "description": "Profile não encontrado!"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -192,11 +192,39 @@
           "200": {
             "description": "OK"
           },
-          "400": {
-            "description": "Bad Request"
-          },
           "404": {
             "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/profile/deleteProfileByID/{_id}": {
+      "delete": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Deletar profile por ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Profile não encontrado!"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
