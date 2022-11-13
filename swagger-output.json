@@ -371,6 +371,58 @@
           }
         }
       }
+    },
+    "/comment/deletarSubComment/{_idComment}/{_idSubComment}": {
+      "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Deletar um SubComment de um Comment",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_idComment",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID de um Comment"
+          },
+          {
+            "name": "_idSubComment",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID de um SubComment"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/comment/deletarCommentByID/{_id}": {
+      "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Deletar um SubComment de um Comment",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "ID de um Comment"
+          }
+        ],
+        "responses": {}
+      }
     }
   },
   "autoHeaders": true,
