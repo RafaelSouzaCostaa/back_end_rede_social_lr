@@ -5,7 +5,6 @@
     "title": "API - Rede Social LR",
     "description": "<b>API - Rede Social LR</b> foi realizado como um trabalho final da materia de API REST"
   },
-  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http",
@@ -46,20 +45,20 @@
         "tags": [
           "Login"
         ],
-        "summary": "Realizando um login",
+        "summary": "Realizar um Login",
         "description": "",
         "parameters": [
           {
             "name": "Login",
             "in": "body",
-            "description": "Esse obj realiza um login",
+            "description": "Login",
             "required": true,
             "schema": {
               "type": "object",
               "properties": {
                 "email": {
                   "type": "string",
-                  "example": "63703f1de318f3ffa792dde4"
+                  "example": "leafar@leafar"
                 },
                 "password": {
                   "type": "string",
@@ -74,10 +73,10 @@
             "description": "OK"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Não Encontrado"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         },
         "security": []
@@ -99,10 +98,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "profileObjectID": {
-                  "type": "string",
-                  "example": "63703f1de318f3ffa792dde4"
-                },
                 "postMedia": {
                   "type": "array",
                   "example": [
@@ -115,7 +110,7 @@
                 },
                 "postDate": {
                   "type": "string",
-                  "example": "Mon Nov 14 2022 00:45:48 GMT-0300 (Horário Padrão de Brasília)"
+                  "example": "Mon Nov 14 2022 17:31:30 GMT-0300 (Horário Padrão de Brasília)"
                 },
                 "numberOfLikes": {
                   "type": "number",
@@ -143,10 +138,10 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -164,10 +159,10 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -214,7 +209,7 @@
                 },
                 "birthDate": {
                   "type": "string",
-                  "example": "Mon Nov 14 2022 00:45:48 GMT-0300 (Horário Padrão de Brasília)"
+                  "example": "Mon Nov 14 2022 17:31:30 GMT-0300 (Horário Padrão de Brasília)"
                 },
                 "followingObjectId": {
                   "type": "array",
@@ -235,13 +230,13 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "404": {
             "description": "Email ou NickName já está em uso!"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         },
         "security": []
@@ -254,20 +249,19 @@
         ],
         "summary": "Buscando todos os Profiles",
         "description": "",
-        "parameters": [
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "404": {
             "description": "Não tem profiles cadastrado no banco!"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -293,13 +287,13 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "404": {
             "description": "Profile não encontrado!"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -324,13 +318,13 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Não Encontrado"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -355,13 +349,13 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "404": {
             "description": "Profile não encontrado!"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -386,13 +380,13 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "404": {
-            "description": "Not Found"
+            "description": "Não Encontrado"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -447,10 +441,10 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -496,10 +490,10 @@
             "description": "OK"
           },
           "401": {
-            "description": "Unauthorized"
+            "description": "Não autorizado"
           },
           "500": {
-            "description": "Internal Server Error"
+            "description": "Erro Interno do Servidor"
           }
         }
       }
@@ -509,8 +503,5 @@
     {
       "Authorization": []
     }
-  ],
-  "autoHeaders": true,
-  "autoQuery": true,
-  "autoBody": true
+  ]
 }

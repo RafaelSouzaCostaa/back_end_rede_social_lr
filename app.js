@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 require("dotenv").config({ path: "./variables.env" });
 const jwt = require("jsonwebtoken");
 
-const swaggerFile = require("./swagger-output.json");
+const swaggerFile = require("./swagger/swagger-output.json");
 const swaggerUI = require("swagger-ui-express");
 
 const authVerify = require("./authVerify");

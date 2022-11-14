@@ -1,4 +1,8 @@
-const swaggerAutogen = require("swagger-autogen")();
+const outputsFile = "./swagger/swagger-output.json";
+const endpointsFiles = ["./app.js", "./lib/controllers/*.js"];
+const swaggerOptions = require("./swagger-autogen.options.js");
+const swaggerAutogen = require("swagger-autogen")(swaggerOptions);
+require("dotenv").config({ path: "../variables.env" });
 
 const doc = {
     info: {
@@ -21,18 +25,11 @@ const doc = {
             Authorization: [],
         },
     ],
-    host: "localhost:3000",
+    definitions: {},
+    host: process.env.HOST,
     schemes: ["http", "https"],
     consumes: ["application/json"],
     produces: ["application/json"],
-    autoHeaders: true,
-    autoQuery: true,
-    autoBody: true,
 };
 
-const outputsFile = "swagger-output.json";
-const endpointsFiles = ["./app.js", "./lib/controllers/*.js"];
-
-swaggerAutogen(outputsFile, endpointsFiles, doc).then(async () => {
-    //await require("./bin/www");
-});
+swaggerAutogen(outputsFile, endpointsFiles, doc);
