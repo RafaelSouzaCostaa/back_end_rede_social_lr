@@ -7,6 +7,20 @@ const doc = {
         description:
             "<b>API - Rede Social LR</b> foi realizado como um trabalho final da materia de API REST",
     },
+    basePath: "/",
+    securityDefinitions: {
+        Authorization: {
+            type: "apiKey",
+            name: "x-access-token",
+            scheme: "bearer",
+            in: "headers",
+        },
+    },
+    security: [
+        {
+            Authorization: [],
+        },
+    ],
     host: "localhost:3000",
     schemes: ["http", "https"],
     consumes: ["application/json"],

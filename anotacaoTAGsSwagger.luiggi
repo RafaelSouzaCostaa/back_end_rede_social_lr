@@ -17,3 +17,6 @@ POR GENTILEZA SE UTILIZAR OUTRAS TAGS ADD AQUI //ATENCAO LUIGGI
 #swagger.responses[100] = {
     description: "Descrição da Resposta"
 }
+
+//Torna a Rota publica ao ADD isso - Não a Necessidade de Token para acesso
+#swagger.security = []
