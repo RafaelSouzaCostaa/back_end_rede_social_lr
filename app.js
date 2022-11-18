@@ -39,7 +39,7 @@ app.use("/comment", authVerify.private, commentsRouter);
 mongoose
     .connect(process.env.URL_MONGO_DB)
     .then(() => {
-        app.listen(process.env.PORT_API);
+        app.listen(process.env.PORT_API, process.env.HOST);
         console.log("Banco conectado com sucesso!");
     })
     .catch(function (err) {

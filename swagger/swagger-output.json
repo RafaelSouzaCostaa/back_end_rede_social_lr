@@ -5,6 +5,7 @@
     "title": "API - Rede Social LR",
     "description": "<b>API - Rede Social LR</b> foi realizado como um trabalho final da materia de API REST"
   },
+  "host": null,
   "basePath": "/",
   "schemes": [
     "http",
@@ -82,7 +83,7 @@
         "security": []
       }
     },
-    "/post/": {
+    "/post/create": {
       "post": {
         "tags": [
           "Post"
@@ -110,7 +111,7 @@
                 },
                 "postDate": {
                   "type": "string",
-                  "example": "Mon Nov 14 2022 17:31:30 GMT-0300 (Horário Padrão de Brasília)"
+                  "example": "Thu Nov 17 2022 22:39:48 GMT-0300 (Horário Padrão de Brasília)"
                 },
                 "numberOfLikes": {
                   "type": "number",
@@ -146,7 +147,7 @@
         }
       }
     },
-    "/post/getAllPosts": {
+    "/post/getAll": {
       "get": {
         "tags": [
           "Post"
@@ -167,7 +168,7 @@
         }
       }
     },
-    "/profile/": {
+    "/profile/create": {
       "post": {
         "tags": [
           "Profile"
@@ -178,7 +179,7 @@
           {
             "name": "Profile",
             "in": "body",
-            "description": "Esse obj add um profile no banco de dados",
+            "description": "Esse obj add um profile no banco de dados;  IMPLEMENTAR uma descrição que não sangre os olhos de quem vê!",
             "required": true,
             "schema": {
               "type": "object",
@@ -209,7 +210,7 @@
                 },
                 "birthDate": {
                   "type": "string",
-                  "example": "Mon Nov 14 2022 17:31:30 GMT-0300 (Horário Padrão de Brasília)"
+                  "example": "Thu Nov 17 2022 22:39:48 GMT-0300 (Horário Padrão de Brasília)"
                 },
                 "followingObjectId": {
                   "type": "array",
@@ -242,7 +243,7 @@
         "security": []
       }
     },
-    "/profile/getAlls": {
+    "/profile/getAll": {
       "get": {
         "tags": [
           "Profile"
@@ -266,7 +267,7 @@
         }
       }
     },
-    "/profile/getProfileByNickName/{nickName}": {
+    "/profile/getByNickname/{nickname}": {
       "get": {
         "tags": [
           "Profile"
@@ -275,11 +276,11 @@
         "description": "",
         "parameters": [
           {
-            "name": "nickName",
+            "name": "nickname",
             "in": "path",
             "required": true,
             "type": "string",
-            "nickName": "nickName"
+            "nickname": "nickname"
           }
         ],
         "responses": {
@@ -298,7 +299,7 @@
         }
       }
     },
-    "/profile/getProfileByID/{_id}": {
+    "/profile/getById/{_id}": {
       "get": {
         "tags": [
           "Profile"
@@ -329,7 +330,7 @@
         }
       }
     },
-    "/profile/deleteProfileByID/{_id}": {
+    "/profile/deleteById/{_id}": {
       "delete": {
         "tags": [
           "Profile"
@@ -360,7 +361,7 @@
         }
       }
     },
-    "/profile/setFollowingById/{followObjectId}": {
+    "/profile/setFollow/{followObjectId}": {
       "post": {
         "tags": [
           "Profile"
@@ -391,7 +392,7 @@
         }
       }
     },
-    "/comment/": {
+    "/comment/create": {
       "post": {
         "tags": [
           "Comment"
@@ -410,10 +411,6 @@
                 "postObjectId": {
                   "type": "string",
                   "example": "63703f1de318f3ffa792dde4"
-                },
-                "profileObjectId": {
-                  "type": "string",
-                  "example": "63703f1de318f3ffa792ddad"
                 },
                 "comment": {
                   "type": "string",
@@ -468,10 +465,6 @@
                 "commentObjectId": {
                   "type": "string",
                   "example": "63703f1de318f3ffa792dde4"
-                },
-                "profileObjectId": {
-                  "type": "string",
-                  "example": "63703f1de318f3ffa79sdse5"
                 },
                 "comment": {
                   "type": "string",

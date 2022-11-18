@@ -26,7 +26,7 @@ const doc = {
         },
     ],
     definitions: {},
-    host: process.env.HOST,
+    host: process.env.HOST + process.env.POST_API,
     schemes: ["http", "https"],
     consumes: ["application/json"],
     produces: ["application/json"],
