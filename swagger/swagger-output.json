@@ -110,8 +110,8 @@
                   }
                 },
                 "postDate": {
-                  "type": "string",
-                  "example": "Thu Nov 17 2022 22:39:48 GMT-0300 (Horário Padrão de Brasília)"
+                  "type": "number",
+                  "example": 65151651155
                 },
                 "numberOfLikes": {
                   "type": "number",
@@ -209,8 +209,8 @@
                   "example": "http url/png/jpeg/"
                 },
                 "birthDate": {
-                  "type": "string",
-                  "example": "Thu Nov 17 2022 22:39:48 GMT-0300 (Horário Padrão de Brasília)"
+                  "type": "number",
+                  "example": 65151651155
                 },
                 "followingObjectId": {
                   "type": "array",
