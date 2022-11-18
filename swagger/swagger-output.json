@@ -110,8 +110,8 @@
                   }
                 },
                 "postDate": {
-                  "type": "number",
-                  "example": 65151651155
+                  "type": "string",
+                  "example": "65151651155"
                 },
                 "numberOfLikes": {
                   "type": "number",
@@ -188,7 +188,7 @@
                   "type": "string",
                   "example": "Rafael De Souza"
                 },
-                "nickName": {
+                "nickname": {
                   "type": "string",
                   "example": "leafar"
                 },
@@ -209,8 +209,8 @@
                   "example": "http url/png/jpeg/"
                 },
                 "birthDate": {
-                  "type": "number",
-                  "example": 65151651155
+                  "type": "string",
+                  "example": "65151651155"
                 },
                 "followingObjectId": {
                   "type": "array",
@@ -272,7 +272,7 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Buscando profile por nickName",
+        "summary": "Buscando profile por nickname",
         "description": "",
         "parameters": [
           {
@@ -412,6 +412,10 @@
                   "type": "string",
                   "example": "63703f1de318f3ffa792dde4"
                 },
+                "creationDate": {
+                  "type": "string",
+                  "example": "56151615"
+                },
                 "comment": {
                   "type": "string",
                   "example": "Este e um comentario"
@@ -465,6 +469,10 @@
                 "commentObjectId": {
                   "type": "string",
                   "example": "63703f1de318f3ffa792dde4"
+                },
+                "creationDate": {
+                  "type": "string",
+                  "example": "654165151651"
                 },
                 "comment": {
                   "type": "string",
