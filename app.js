@@ -16,6 +16,7 @@ const postRouter = require("./lib/routes/post");
 const profileRouter = require("./lib/routes/profile");
 const commentsRouter = require("./lib/routes/comment");
 const authRouter = require("./lib/routes/auth");
+const syncProfileRouter = require("./lib/routes/syncProfile");
 
 app.use(cors());
 
@@ -34,6 +35,7 @@ app.use("/", indexRouter);
 app.use("/login", authRouter);
 app.use("/post", authVerify.private, postRouter);
 app.use("/profile", profileRouter);
+app.use("/syncprofile", syncProfileRouter);
 app.use("/comment", authVerify.private, commentsRouter);
 
 mongoose
