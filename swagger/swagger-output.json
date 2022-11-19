@@ -111,7 +111,7 @@
                 },
                 "postDate": {
                   "type": "string",
-                  "example": "65151651155"
+                  "example": "MilissegundosString"
                 },
                 "numberOfLikes": {
                   "type": "number",
@@ -210,7 +210,7 @@
                 },
                 "birthDate": {
                   "type": "string",
-                  "example": "65151651155"
+                  "example": "MilissegundosString"
                 },
                 "followingObjectId": {
                   "type": "array",
@@ -392,6 +392,29 @@
         }
       }
     },
+    "/syncprofile/": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
     "/comment/create": {
       "post": {
         "tags": [
@@ -414,7 +437,7 @@
                 },
                 "creationDate": {
                   "type": "string",
-                  "example": "56151615"
+                  "example": "MilissegundosString"
                 },
                 "comment": {
                   "type": "string",
@@ -472,7 +495,7 @@
                 },
                 "creationDate": {
                   "type": "string",
-                  "example": "654165151651"
+                  "example": "MilissegundosString"
                 },
                 "comment": {
                   "type": "string",
