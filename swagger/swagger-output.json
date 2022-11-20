@@ -166,6 +166,30 @@
         }
       }
     },
+    "/post/getAllByFollow": {
+      "get": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "getAllByFollow",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
     "/profile/create": {
       "post": {
         "tags": [
@@ -198,27 +222,9 @@
                   "type": "string",
                   "example": "password321"
                 },
-                "phone": {
+                "creationDate": {
                   "type": "string",
-                  "example": "12 3456-78910"
-                },
-                "image": {
-                  "type": "string",
-                  "example": "http url/png/jpeg/"
-                },
-                "birthDate": {
-                  "type": "string",
-                  "example": "MilissegundosString"
-                },
-                "followingObjectId": {
-                  "type": "array",
-                  "example": [],
-                  "items": {}
-                },
-                "followersObjectId": {
-                  "type": "array",
-                  "example": [],
-                  "items": {}
+                  "example": "515656151"
                 }
               }
             }
