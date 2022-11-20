@@ -73,6 +73,9 @@
           "200": {
             "description": "OK"
           },
+          "403": {
+            "description": "Acesso Negado"
+          },
           "404": {
             "description": "Não Encontrado"
           },
@@ -144,7 +147,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "getAllPosts",
+        "summary": "getAll",
         "description": "",
         "parameters": [],
         "responses": {
@@ -153,6 +156,9 @@
           },
           "401": {
             "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
           },
           "500": {
             "description": "Erro Interno do Servidor"
