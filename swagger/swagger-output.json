@@ -113,17 +113,9 @@
                   "type": "string",
                   "example": "MilissegundosString"
                 },
-                "numberOfLikes": {
-                  "type": "number",
-                  "example": 0
-                },
-                "numberOfReposts": {
-                  "type": "number",
-                  "example": 0
-                },
-                "numberOfComments": {
-                  "type": "number",
-                  "example": 0
+                "description": {
+                  "type": "string",
+                  "example": "descrição aqui"
                 },
                 "comments": {
                   "type": "array",

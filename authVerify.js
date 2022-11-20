@@ -13,9 +13,8 @@ module.exports = {
                     .status(500)
                     .json({ error: "Failed to verify token" });
             req._idToken = decoded.id;
-            req.nameToken = decoded.name;
+            req.emailToken = decoded.email;
             req.nicknameToken = decoded.nickname;
-
             next();
         });
     },
