@@ -114,16 +114,11 @@
                 },
                 "postDate": {
                   "type": "string",
-                  "example": "MilissegundosString"
+                  "example": "6454654165146"
                 },
                 "description": {
                   "type": "string",
                   "example": "descrição aqui"
-                },
-                "comments": {
-                  "type": "array",
-                  "example": [],
-                  "items": {}
                 }
               }
             }
