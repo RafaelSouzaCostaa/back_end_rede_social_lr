@@ -190,6 +190,7 @@
         "tags": [
           "Post"
         ],
+        "summary": "Buscando todos os Post do Profile especifico pelo ID, caso passar o ID como NULL, ele retorna os Post do Profile Logado",
         "description": "",
         "parameters": [
           {
@@ -496,7 +497,7 @@
                 },
                 "creationDate": {
                   "type": "string",
-                  "example": "MilissegundosString"
+                  "example": "56115615516"
                 },
                 "comment": {
                   "type": "string",
@@ -554,15 +555,11 @@
                 },
                 "creationDate": {
                   "type": "string",
-                  "example": "MilissegundosString"
+                  "example": "561561516561"
                 },
                 "comment": {
                   "type": "string",
                   "example": "Este e um SubComment"
-                },
-                "numberOfLikes": {
-                  "type": "number",
-                  "example": 0
                 }
               }
             }
@@ -604,6 +601,23 @@
           },
           "404": {
             "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/comment/getAllComments": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Não autorizado"
           },
           "500": {
             "description": "Erro Interno do Servidor"
