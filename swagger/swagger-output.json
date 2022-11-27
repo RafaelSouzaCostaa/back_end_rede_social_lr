@@ -296,6 +296,9 @@
           "404": {
             "description": "Email ou NickName já está em uso!"
           },
+          "409": {
+            "description": "Conflito"
+          },
           "500": {
             "description": "Erro Interno do Servidor"
           }
@@ -601,23 +604,6 @@
           },
           "404": {
             "description": "Não Encontrado"
-          },
-          "500": {
-            "description": "Erro Interno do Servidor"
-          }
-        }
-      }
-    },
-    "/comment/getAllComments": {
-      "get": {
-        "tags": [
-          "Comment"
-        ],
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "401": {
-            "description": "Não autorizado"
           },
           "500": {
             "description": "Erro Interno do Servidor"

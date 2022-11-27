@@ -4,7 +4,7 @@
   "description": "Trabalho Final - API Rest - Marcel",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./lib/testes/tests.js",
     "start": "npm run swagger-autogen && nodemon ./app.js",
     "swagger-autogen": "node ./swagger/swagger.js"
   },
@@ -21,6 +21,9 @@
     "swagger-ui-express": "^4.5.0"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
     "swagger-autogen": "^2.22.0"
   }
