@@ -73,8 +73,8 @@
           "200": {
             "description": "OK"
           },
-          "403": {
-            "description": "Acesso Negado"
+          "400": {
+            "description": "Solicitação Inválida"
           },
           "404": {
             "description": "Não Encontrado"
@@ -91,13 +91,13 @@
         "tags": [
           "Post"
         ],
-        "summary": "Criando um Post",
+        "summary": "Cria uma nova Postagem",
         "description": "",
         "parameters": [
           {
             "name": "Post",
             "in": "body",
-            "description": "Esse obj add um comment no banco de dados",
+            "description": "Adiciona uma postagem ao banco de dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -190,7 +190,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Buscando todos os Post do Profile especifico pelo ID, caso passar o ID como NULL, ele retorna os Post do Profile Logado",
+        "summary": "Buscando todos as Postagens do perfil especificado pelo ID, caso passar uma ID vazia, retorna-se as postagens do perfil atual",
         "description": "",
         "parameters": [
           {
@@ -257,7 +257,7 @@
           {
             "name": "Profile",
             "in": "body",
-            "description": "Esse obj add um profile no banco de dados;  IMPLEMENTAR uma descrição que não sangre os olhos de quem vê!",
+            "description": "Adiciona um novo perfil ao banco de dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -294,7 +294,7 @@
             "description": "Não autorizado"
           },
           "404": {
-            "description": "Email ou NickName já está em uso!"
+            "description": "Email ou Nickname já estão em uso"
           },
           "409": {
             "description": "Conflito"
@@ -311,7 +311,7 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Buscando todos os Profiles",
+        "summary": "Buscando todos os perfis",
         "description": "",
         "parameters": [],
         "responses": {
@@ -322,7 +322,7 @@
             "description": "Não autorizado"
           },
           "404": {
-            "description": "Não tem profiles cadastrado no banco!"
+            "description": "Nenhum perfil encontrado no banco de dados"
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -335,7 +335,7 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Buscando profile por nickname",
+        "summary": "Buscando perfil por nickname",
         "description": "",
         "parameters": [
           {
@@ -354,7 +354,7 @@
             "description": "Não autorizado"
           },
           "404": {
-            "description": "Profile não encontrado!"
+            "description": "Perfil não encontrado"
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -367,7 +367,7 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Buscando profile por ID",
+        "summary": "Buscando perfil por ID",
         "description": "",
         "parameters": [
           {
@@ -398,7 +398,7 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Deletar profile por ID",
+        "summary": "Deletar perfil por ID",
         "description": "",
         "parameters": [
           {
@@ -416,7 +416,7 @@
             "description": "Não autorizado"
           },
           "404": {
-            "description": "Profile não encontrado!"
+            "description": "Perfil não encontrado!"
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -483,13 +483,13 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Criando um Comment",
+        "summary": "Cria um Comentario",
         "description": "",
         "parameters": [
           {
             "name": "Comment",
             "in": "body",
-            "description": "Esse obj add um comment no banco de dados",
+            "description": "Adiciona um comentario a uma postagem no banco de dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -529,6 +529,9 @@
           },
           "401": {
             "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
           },
           "500": {
             "description": "Erro Interno do Servidor"
