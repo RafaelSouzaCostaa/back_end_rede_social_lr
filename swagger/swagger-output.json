@@ -131,6 +131,9 @@
           "401": {
             "description": "Não autorizado"
           },
+          "404": {
+            "description": "Não Encontrado"
+          },
           "500": {
             "description": "Erro Interno do Servidor"
           }
