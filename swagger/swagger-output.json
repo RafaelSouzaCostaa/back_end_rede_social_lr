@@ -193,7 +193,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Recupera todas as Postagens do Perfil especificado pelo ID, caso passar uma ID vazia retorna as Postagens do Perfil atual",
+        "summary": "Recupera todas as Postagens do Perfil especificado pelo ID",
         "description": "",
         "parameters": [
           {
@@ -219,7 +219,7 @@
         }
       }
     },
-    "/post/deleteById/{_id}": {
+    "/post/deleteById/{_idProfile}/{_idPost}": {
       "delete": {
         "tags": [
           "Post"
@@ -228,10 +228,98 @@
         "description": "",
         "parameters": [
           {
-            "name": "_id",
+            "name": "_idProfile",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "_idPost",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/post/setPostLike": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Salva um post curtido",
+        "description": "",
+        "parameters": [
+          {
+            "name": "Post",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "profileObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792dde4"
+                },
+                "postObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792ddea"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/post/removePostLike": {
+      "delete": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Remove um post curtido",
+        "description": "",
+        "parameters": [
+          {
+            "name": "Post",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "postObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792ddea"
+                }
+              }
+            }
           }
         ],
         "responses": {
