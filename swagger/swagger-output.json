@@ -575,7 +575,7 @@
         }
       }
     },
-    "/comment/create/{profileObjectIdPost}": {
+    "/comment/create/{profileObjectId}": {
       "post": {
         "tags": [
           "Comment"
@@ -584,7 +584,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "profileObjectIdPost",
+            "name": "profileObjectId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -629,7 +629,7 @@
         }
       }
     },
-    "/comment/createSubComment/{profileObjectIdPost}": {
+    "/comment/createSubComment/{profileObjectId}": {
       "post": {
         "tags": [
           "Comment"
@@ -638,7 +638,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "profileObjectIdPost",
+            "name": "profileObjectId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -683,7 +683,7 @@
         }
       }
     },
-    "/comment/deleteById/{profileObjectIdPost}/{commentObjectID}": {
+    "/comment/deleteById/{profileObjectId}/{commentObjectID}": {
       "delete": {
         "tags": [
           "Comment"
@@ -692,7 +692,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "profileObjectIdPost",
+            "name": "profileObjectId",
             "in": "path",
             "required": true,
             "type": "string"
@@ -720,7 +720,7 @@
         }
       }
     },
-    "/comment/deleteSubComment/{profileObjectIdPost}/{commentObjectID}/{subCommentObjectID}": {
+    "/comment/deleteSubComment/{profileObjectId}/{commentObjectID}/{subCommentObjectID}": {
       "delete": {
         "tags": [
           "Comment"
@@ -729,7 +729,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "profileObjectIdPost",
+            "name": "profileObjectId",
             "in": "path",
             "required": true,
             "type": "string"
