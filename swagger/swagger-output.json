@@ -140,6 +140,49 @@
         }
       }
     },
+    "/post/setPostLike": {
+      "post": {
+        "tags": [
+          "Post"
+        ],
+        "summary": "Salva uma Curtida",
+        "description": "",
+        "parameters": [
+          {
+            "name": "Post",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "profileObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792dde4"
+                },
+                "postObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792ddea"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
     "/post/getAll": {
       "get": {
         "tags": [
@@ -238,49 +281,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "404": {
-            "description": "Não Encontrado"
-          },
-          "500": {
-            "description": "Erro Interno do Servidor"
-          }
-        }
-      }
-    },
-    "/post/setPostLike": {
-      "post": {
-        "tags": [
-          "Post"
-        ],
-        "summary": "Salva uma Curtida",
-        "description": "",
-        "parameters": [
-          {
-            "name": "Post",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "profileObjectId": {
-                  "type": "string",
-                  "example": "63703f1de318f3ffa792dde4"
-                },
-                "postObjectId": {
-                  "type": "string",
-                  "example": "63703f1de318f3ffa792ddea"
-                }
-              }
-            }
           }
         ],
         "responses": {
@@ -402,6 +402,37 @@
         "security": []
       }
     },
+    "/profile/follow/{followObjectId}": {
+      "post": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Segue o Perfil especificado pelo ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "followObjectId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
     "/profile/getAll": {
       "get": {
         "tags": [
@@ -419,6 +450,37 @@
           },
           "404": {
             "description": "Nenhum perfil encontrado no banco de dados"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/profile/getById/{_id}": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Recupera Perfil especificado pelo ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -458,21 +520,14 @@
         }
       }
     },
-    "/profile/getById/{_id}": {
+    "/profile/getProfileByToken": {
       "get": {
         "tags": [
           "Profile"
         ],
-        "summary": "Recupera Perfil especificado pelo ID",
+        "summary": "Recupera Perfil especificado pelo Token",
         "description": "",
-        "parameters": [
-          {
-            "name": "_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "OK"
@@ -482,6 +537,55 @@
           },
           "404": {
             "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/profile/updateById": {
+      "put": {
+        "tags": [
+          "Profile"
+        ],
+        "summary": "Atualiza um Profile",
+        "description": "",
+        "parameters": [
+          {
+            "name": "Profile",
+            "in": "body",
+            "description": "Atualiza um perfil ao banco de dados",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Rafael De Souza"
+                },
+                "nickname": {
+                  "type": "string",
+                  "example": "leafar"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "leafar@leafar"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "description"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Nenhum perfil encontrado no banco de dados"
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -513,61 +617,6 @@
           },
           "404": {
             "description": "Perfil não encontrado!"
-          },
-          "500": {
-            "description": "Erro Interno do Servidor"
-          }
-        }
-      }
-    },
-    "/profile/follow/{followObjectId}": {
-      "post": {
-        "tags": [
-          "Profile"
-        ],
-        "summary": "Segue o Perfil especificado pelo ID",
-        "description": "",
-        "parameters": [
-          {
-            "name": "followObjectId",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "404": {
-            "description": "Não Encontrado"
-          },
-          "500": {
-            "description": "Erro Interno do Servidor"
-          }
-        }
-      }
-    },
-    "/profile/getProfileByToken": {
-      "get": {
-        "tags": [
-          "Profile"
-        ],
-        "summary": "Recupera Perfil especificado pelo Token",
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "404": {
-            "description": "Não Encontrado"
           },
           "500": {
             "description": "Erro Interno do Servidor"
