@@ -575,12 +575,19 @@
                 "description": {
                   "type": "string",
                   "example": "description"
+                },
+                "birthDate": {
+                  "type": "string",
+                  "example": "556565665465"
                 }
               }
             }
           }
         ],
         "responses": {
+          "200": {
+            "description": "OK"
+          },
           "401": {
             "description": "Não autorizado"
           },
