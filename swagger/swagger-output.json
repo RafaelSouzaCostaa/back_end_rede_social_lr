@@ -261,7 +261,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Salva um post curtido",
+        "summary": "Salva uma Curtida",
         "description": "",
         "parameters": [
           {
@@ -304,7 +304,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Remove um post curtido",
+        "summary": "Remover Curtida",
         "description": "",
         "parameters": [
           {
@@ -314,6 +314,10 @@
             "schema": {
               "type": "object",
               "properties": {
+                "profileObjectId": {
+                  "type": "string",
+                  "example": "63703f1de318f3ffa792dde4"
+                },
                 "postObjectId": {
                   "type": "string",
                   "example": "63703f1de318f3ffa792ddea"
@@ -571,7 +575,7 @@
         }
       }
     },
-    "/comment/create": {
+    "/comment/create/{profileObjectIdPost}": {
       "post": {
         "tags": [
           "Comment"
@@ -579,6 +583,12 @@
         "summary": "Cria um Comentario",
         "description": "",
         "parameters": [
+          {
+            "name": "profileObjectIdPost",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "Comment",
             "in": "body",
@@ -589,7 +599,7 @@
               "properties": {
                 "postObjectId": {
                   "type": "string",
-                  "example": "63703f1de318f3ffa792dde4"
+                  "example": "6386de4bbbd7d1884c5aede0"
                 },
                 "creationDate": {
                   "type": "string",
@@ -598,19 +608,6 @@
                 "comment": {
                   "type": "string",
                   "example": "Este e um comentario"
-                },
-                "numberOfLikes": {
-                  "type": "number",
-                  "example": 0
-                },
-                "numberOfComments": {
-                  "type": "number",
-                  "example": 0
-                },
-                "subComments": {
-                  "type": "array",
-                  "example": [],
-                  "items": {}
                 }
               }
             }
@@ -632,7 +629,7 @@
         }
       }
     },
-    "/comment/createSubComment": {
+    "/comment/createSubComment/{profileObjectIdPost}": {
       "post": {
         "tags": [
           "Comment"
@@ -640,6 +637,12 @@
         "summary": "Criando um SubComment",
         "description": "",
         "parameters": [
+          {
+            "name": "profileObjectIdPost",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "SubComment",
             "in": "body",
@@ -671,13 +674,16 @@
           "401": {
             "description": "Não autorizado"
           },
+          "404": {
+            "description": "Não Encontrado"
+          },
           "500": {
             "description": "Erro Interno do Servidor"
           }
         }
       }
     },
-    "/comment/deleteById/{_id}": {
+    "/comment/deleteById/{profileObjectIdPost}/{commentObjectID}": {
       "delete": {
         "tags": [
           "Comment"
@@ -686,7 +692,56 @@
         "description": "",
         "parameters": [
           {
-            "name": "_id",
+            "name": "profileObjectIdPost",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "commentObjectID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Não autorizado"
+          },
+          "404": {
+            "description": "Não Encontrado"
+          },
+          "500": {
+            "description": "Erro Interno do Servidor"
+          }
+        }
+      }
+    },
+    "/comment/deleteSubComment/{profileObjectIdPost}/{commentObjectID}/{subCommentObjectID}": {
+      "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Deletando um SubComment",
+        "description": "",
+        "parameters": [
+          {
+            "name": "profileObjectIdPost",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "commentObjectID",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subCommentObjectID",
             "in": "path",
             "required": true,
             "type": "string"
