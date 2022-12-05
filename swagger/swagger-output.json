@@ -140,12 +140,12 @@
         }
       }
     },
-    "/post/setPostLike": {
+    "/post/addLike": {
       "post": {
         "tags": [
           "Post"
         ],
-        "summary": "Salva uma Curtida",
+        "summary": "Adiciona uma curitda á Postagem indicada",
         "description": "",
         "parameters": [
           {
@@ -299,12 +299,12 @@
         }
       }
     },
-    "/post/removePostLike": {
+    "/post/removeLike": {
       "delete": {
         "tags": [
           "Post"
         ],
-        "summary": "Remover Curtida",
+        "summary": "Remove curtida da Postagem indicada",
         "description": "",
         "parameters": [
           {
