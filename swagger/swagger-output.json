@@ -91,7 +91,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Cria uma nova Postagem",
+        "summary": "Adiciona uma nova Postagem ao Banco de Dados",
         "description": "",
         "parameters": [
           {
@@ -512,7 +512,7 @@
           {
             "name": "Profile",
             "in": "body",
-            "description": "Atualiza um perfil ao banco de dados",
+            "description": "Atualiza um Perfil do banco de dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -549,7 +549,7 @@
             "description": "Não autorizado"
           },
           "404": {
-            "description": "Nenhum perfil encontrado no banco de dados"
+            "description": "Nenhum Perfil encontrado no banco de dados"
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -647,7 +647,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Criando um SubComment",
+        "summary": "Adiciona um Sub Comentario",
         "description": "",
         "parameters": [
           {
@@ -659,7 +659,7 @@
           {
             "name": "SubComment",
             "in": "body",
-            "description": "Esse obj add um SubComment no banco de dados",
+            "description": "Adiciona um Sub Comentario a um Comentario no banco de dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -738,7 +738,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Deletando um SubComment",
+        "summary": "Remove o Sub Comentario especificado pela ID",
         "description": "",
         "parameters": [
           {
