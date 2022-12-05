@@ -145,7 +145,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Salva/Remove uma Curtida",
+        "summary": "Adiciona ou Remove uma Curtida da Postagem indicada",
         "description": "",
         "parameters": [
           {
