@@ -140,12 +140,12 @@
         }
       }
     },
-    "/post/setPostLike": {
+    "/post/like": {
       "post": {
         "tags": [
           "Post"
         ],
-        "summary": "Salva uma Curtida",
+        "summary": "Salva/Remove uma Curtida",
         "description": "",
         "parameters": [
           {
@@ -281,49 +281,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Não autorizado"
-          },
-          "404": {
-            "description": "Não Encontrado"
-          },
-          "500": {
-            "description": "Erro Interno do Servidor"
-          }
-        }
-      }
-    },
-    "/post/removePostLike": {
-      "delete": {
-        "tags": [
-          "Post"
-        ],
-        "summary": "Remover Curtida",
-        "description": "",
-        "parameters": [
-          {
-            "name": "Post",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "profileObjectId": {
-                  "type": "string",
-                  "example": "63703f1de318f3ffa792dde4"
-                },
-                "postObjectId": {
-                  "type": "string",
-                  "example": "63703f1de318f3ffa792ddea"
-                }
-              }
-            }
           }
         ],
         "responses": {
