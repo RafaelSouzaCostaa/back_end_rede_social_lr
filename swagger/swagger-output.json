@@ -262,7 +262,7 @@
         }
       }
     },
-    "/post/deleteById/{_idProfile}/{_idPost}": {
+    "/post/deleteById/{_idPost}": {
       "delete": {
         "tags": [
           "Post"
@@ -270,12 +270,6 @@
         "summary": "Remove a Postagem especificada pelo ID",
         "description": "",
         "parameters": [
-          {
-            "name": "_idProfile",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "_idPost",
             "in": "path",
@@ -380,6 +374,9 @@
           },
           "401": {
             "description": "Não autorizado"
+          },
+          "403": {
+            "description": "Acesso Negado"
           },
           "404": {
             "description": "Não Encontrado"
