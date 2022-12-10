@@ -91,13 +91,13 @@
         "tags": [
           "Post"
         ],
-        "summary": "Adiciona uma nova Postagem ao Banco de Dados",
+        "summary": "Adiciona uma nova Publicação ao Banco de Dados",
         "description": "",
         "parameters": [
           {
             "name": "Post",
             "in": "body",
-            "description": "Adiciona uma postagem ao banco de dados",
+            "description": "Adiciona uma Publicação ao banco de dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -145,7 +145,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Adiciona ou Remove uma Curtida da Postagem indicada",
+        "summary": "Adiciona ou Remove uma Curtida da Publicação indicada",
         "description": "",
         "parameters": [
           {
@@ -188,7 +188,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Recupera todos as Postagens",
+        "summary": "Recupera todos as Publicações",
         "description": "",
         "parameters": [],
         "responses": {
@@ -212,7 +212,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Recupera todas as Postagens dos Perfis que o Perfil logado atual segue",
+        "summary": "Recupera todas as Publicações dos Perfis que o Perfil logado atual segue",
         "description": "",
         "parameters": [],
         "responses": {
@@ -236,7 +236,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Recupera todas as Postagens do Perfil especificado pelo ID",
+        "summary": "Recupera todas as Publicações do Perfil especificado pelo ID",
         "description": "",
         "parameters": [
           {
@@ -267,7 +267,7 @@
         "tags": [
           "Post"
         ],
-        "summary": "Remove a Postagem especificada pelo ID",
+        "summary": "Remove a Publicação especificada pelo ID",
         "description": "",
         "parameters": [
           {
@@ -298,13 +298,13 @@
         "tags": [
           "Profile"
         ],
-        "summary": "Criando um Profile",
+        "summary": "Criando um Perfil",
         "description": "",
         "parameters": [
           {
             "name": "Profile",
             "in": "body",
-            "description": "Adiciona um novo perfil ao banco de dados",
+            "description": "Adiciona um novo Perfil ao Banco de Dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -341,7 +341,7 @@
             "description": "Não autorizado"
           },
           "404": {
-            "description": "Email ou Nickname já estão em uso"
+            "description": "Email ou Apelido já estão em uso"
           },
           "409": {
             "description": "Conflito"
@@ -374,9 +374,6 @@
           },
           "401": {
             "description": "Não autorizado"
-          },
-          "403": {
-            "description": "Acesso Negado"
           },
           "404": {
             "description": "Não Encontrado"
@@ -498,18 +495,18 @@
         }
       }
     },
-    "/profile/updateById": {
+    "/profile/update": {
       "put": {
         "tags": [
           "Profile"
         ],
-        "summary": "Atualiza um Profile",
+        "summary": "Atualiza o Perfil indicado pelo Token",
         "description": "",
         "parameters": [
           {
             "name": "Profile",
             "in": "body",
-            "description": "Atualiza um Perfil do banco de dados",
+            "description": "Atualiza um Perfil do Banco de Dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -546,7 +543,7 @@
             "description": "Não autorizado"
           },
           "404": {
-            "description": "Nenhum Perfil encontrado no banco de dados"
+            "description": "Nenhum Perfil encontrado no Banco de Dados"
           },
           "500": {
             "description": "Erro Interno do Servidor"
@@ -602,7 +599,7 @@
           {
             "name": "Comment",
             "in": "body",
-            "description": "Adiciona um Comentario a uma Postagem no Banco de Dados",
+            "description": "Adiciona um Comentario em uma Publicação do Banco de Dados",
             "required": true,
             "schema": {
               "type": "object",
@@ -671,7 +668,7 @@
                 },
                 "comment": {
                   "type": "string",
-                  "example": "Este e um SubComment"
+                  "example": "Este é um SubComment"
                 }
               }
             }
